@@ -6,23 +6,23 @@ const Header = () => {
   return (
     <div className="header">
       <nav>
-        <NavLink to="/">
-          <div className="header__link">Home</div>
+        <NavLink to="/" className="header__link">
+          <div>Home</div>
         </NavLink>
-        <NavLink to="/tv-shows">
-          <div className="header__link">TV Shows</div>
+        <NavLink to="/tv-shows" className="header__link">
+          <div>TV Shows</div>
         </NavLink>
-        <NavLink to="/movies">
-          <div className="header__link">Movies</div>
+        <NavLink to="/movies" className="header__link">
+          <div>Movies</div>
         </NavLink>
       </nav>
       <div>
         <input />
-        <NavLink to="/favorites">
-          <div className="header__link">Favorites</div>
+        <NavLink to="/favorites" className="header__link">
+          <div>Favorites</div>
         </NavLink>
-        <NavLink to="/profile">
-          <div className="header__link">Profile</div>
+        <NavLink to="/profile" className="header__link">
+          <div>Profile</div>
         </NavLink>
       </div>
     </div>

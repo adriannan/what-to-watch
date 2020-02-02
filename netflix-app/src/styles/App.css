@@ -1,3 +1,6 @@
-.App {
-  text-align: center;
+.app {
+  width: 100vw;
+  height: 100vh;
+  /* text-align: center; */
+  background: #111111 url("../images/bckg.jpg") no-repeat center/cover;
 }
