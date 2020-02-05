@@ -1,0 +1,38 @@
+@import "abstracts";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  padding: 0 1em;
+  background-color: $opa-black;
+  border-bottom: 0.5px solid $opa-white;
+}
+
+.header__nav {
+  @include flex;
+}
+
+.header__link.active {
+  opacity: 1;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.header__link {
+  color: #fff;
+  opacity: 0.8;
+  text-decoration: none;
+  padding: 0 1em 0 1em;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.header__input {
+  margin: 0 1em 0 1em;
+}
+.nav-right {
+  @include flex;
+}
