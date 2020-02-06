@@ -1,12 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../styles/header.css";
+import "../styles/header.scss";
+import SearchInput from "../components/SearchInput";
 
 const Header = () => {
   return (
     <div className="header">
-      <nav>
-        <NavLink to="/" className="header__link">
+      <nav className="header__nav">
+        <NavLink to="/" exact className="header__link">
           <div>Home</div>
         </NavLink>
         <NavLink to="/tv-shows" className="header__link">
@@ -16,8 +17,9 @@ const Header = () => {
           <div>Movies</div>
         </NavLink>
       </nav>
-      <div>
-        <input />
+      <div className="nav-right">
+        {/* <input className="header__input" /> */}
+        <SearchInput />
         <NavLink to="/favorites" className="header__link">
           <div>Favorites</div>
         </NavLink>
