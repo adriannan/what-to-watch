@@ -7,7 +7,7 @@ import {
   Switch
 } from "react-router-dom";
 // import fetchMovies from "./netflix-api/fetchMovies.js";
-import Header from "./Header";
+import Header from "../components/Header";
 import Home from "../pages/Home";
 import Shows from "../pages/Shows";
 import Movies from "../pages/Movies";

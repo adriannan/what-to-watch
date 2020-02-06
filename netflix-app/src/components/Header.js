@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/header.scss";
-import SearchInput from "../components/SearchInput";
+import SearchInput from "./SearchInput";
 
 const Header = () => {
   return (
@@ -18,7 +18,6 @@ const Header = () => {
         </NavLink>
       </nav>
       <div className="nav-right">
-        {/* <input className="header__input" /> */}
         <SearchInput />
         <NavLink to="/favorites" className="header__link">
           <div>Favorites</div>

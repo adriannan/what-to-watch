@@ -1,0 +1,39 @@
+@import "abstracts";
+
+.home__sect {
+  height: 100%;
+  @include flex;
+  flex-direction: column;
+}
+.home__tit {
+  color: #fff;
+  font-size: 3.2em;
+}
+.home__tit:nth-child(2) {
+  color: #fff;
+  font-size: 2em;
+}
+.home__tit:nth-child(3) {
+  color: $red;
+  font-size: 4em;
+}
+.home__btn {
+  padding: 0.3em 2em;
+  margin-top: 5rem;
+  font-size: 1.2em;
+  border: 1px solid $opa-white;
+  border-radius: 3em;
+  background-color: $opa-black;
+  color: #ddd;
+  font-family: $font;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    color: #ccc;
+    transform: scale(0.98);
+  }
+  &:focus {
+    outline: none;
+  }
+}

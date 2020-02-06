@@ -1,8 +1,10 @@
 @import "abstracts";
 
 .header {
+  position: fixed;
   display: flex;
   justify-content: space-between;
+  width: 100vw;
   height: 10vh;
   padding: 0 1em;
   background-color: $opa-black;
