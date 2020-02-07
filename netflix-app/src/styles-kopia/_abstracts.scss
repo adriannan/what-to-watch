@@ -1,0 +1,15 @@
+$red: #e50914;
+$opa-black: rgba(0, 0, 0, 0.5);
+$opa-white: rgba(255, 255, 255, 0.5);
+$font: "EB Garamond", Georgia, serif;
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// @mixin fontStyle {
+//   font-weight: 400;
+//   font-style: italic;
+// }

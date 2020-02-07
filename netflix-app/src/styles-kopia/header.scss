@@ -1,0 +1,83 @@
+@import "abstracts";
+
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 10vh;
+  padding: 0 1em;
+  background-color: $opa-black;
+  border-bottom: 0.5px solid $opa-white;
+  font-size: 1.2em;
+}
+
+.header__nav {
+  @include flex;
+}
+
+.header__link.active {
+  opacity: 1;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.header__link {
+  color: #fff;
+  opacity: 0.7;
+  text-decoration: none;
+  padding: 0 1em 0 1em;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+// .header__input {
+//   margin: 0 1em;
+//   padding: 0.5em 1.5em;
+//   color: #fff;
+//   // opacity: 0.3;
+//   background-color: $opa-black;
+//
+//   &:focus {
+//     outline: none;
+//   }
+// }
+.nav-right {
+  @include flex;
+}
+input[type="search"] {
+  -webkit-appearance: none;
+  // -moz-appearance: none;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+.header__search {
+  position: relative;
+  margin: 0 1em;
+}
+.search__input {
+  padding: 0.8em;
+  border: 1px solid $opa-white;
+  border-radius: 3em;
+  background-color: $opa-black;
+  color: #ddd;
+  &:focus {
+    outline: none;
+  }
+}
+.search__btn {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  color: $opa-white;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
