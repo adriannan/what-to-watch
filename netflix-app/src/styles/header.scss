@@ -32,7 +32,9 @@
     opacity: 0.5;
   }
 }
-
+.header__link:last-child {
+  padding-right: 3em;
+}
 // .header__input {
 //   margin: 0 1em;
 //   padding: 0.5em 1.5em;
