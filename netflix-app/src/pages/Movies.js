@@ -1,7 +1,16 @@
 import React from "react";
 import "../styles/pages.scss";
+import MovieCard from "../components/MovieCard";
+import movies from "../netflix-api/movies.json";
+import imdb from "../netflix-api/imdb.json";
 
 const Movies = () => {
+  const moviesList = Object.values(movies);
+  // const imdbList = Object.values(imdb);
+  const movie = moviesList.map(movie => (
+    <MovieCard id={movie.netflixid} {...movie} />
+  ));
+
   return (
     <section className="section__movies">
       <div className="movies__header">
@@ -23,6 +32,7 @@ const Movies = () => {
           Sort by <i class="material-icons movies__btn-icon">arrow_drop_down</i>
         </button>
       </div>
+      <div>{movie}</div>
     </section>
   );
 };
