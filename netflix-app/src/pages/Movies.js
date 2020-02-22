@@ -32,7 +32,7 @@ const Movies = () => {
           Sort by <i class="material-icons movies__btn-icon">arrow_drop_down</i>
         </button>
       </div>
-      <div>{movie}</div>
+      <div className="movies__main">{movie}</div>
     </section>
   );
 };
