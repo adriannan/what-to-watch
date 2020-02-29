@@ -1,15 +1,15 @@
 import React from "react";
 import "../styles/components.scss";
 
-const MovieCard = ({ title, image, relased, runtime, rating }) => {
+const MovieCard = ({ title, image, released, runtime, rating }) => {
   return (
     <div className="movie__card">
       <div className="movie__img">
         <img src={image} alt="movie"></img>
       </div>
       <div className="movie__info">
-        <h3 className="movie__tit">{title}</h3>
-        <p className="movie__year">{relased}</p>
+        <h2 className="movie__tit">{title}</h2>
+        <h3 className="movie__year">{released}</h3>
         <p className="movie__time">{runtime}</p>
         <p className="movie__rate">
           <i class="material-icons">star</i>
