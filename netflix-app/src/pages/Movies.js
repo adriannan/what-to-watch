@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/pages.scss";
 import MovieCard from "../components/MovieCard";
 import movies from "../netflix-api/movies.json";
-import imdb from "../netflix-api/imdb.json";
+// import imdb from "../netflix-api/imdb.json";
 
 const Movies = () => {
   const moviesList = Object.values(movies);

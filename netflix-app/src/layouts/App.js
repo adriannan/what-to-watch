@@ -3,7 +3,7 @@ import "../styles/App.scss";
 import {
   BrowserRouter as Router,
   Route,
-  Redirect,
+  // Redirect,
   Switch
 } from "react-router-dom";
 // import fetchMovies from "./netflix-api/fetchMovies.js";
