@@ -3,6 +3,7 @@ import "../styles/pages.scss";
 import MovieCard from "../components/MovieCard";
 import movies from "../netflix-api/movies.json";
 // import imdb from "../netflix-api/imdb.json";
+let max = 6;
 
 const Movies = () => {
   const moviesList = Object.values(movies);
@@ -10,10 +11,12 @@ const Movies = () => {
   const movie = moviesList.map(movie => (
     <MovieCard id={movie.netflixid} {...movie} />
   ));
-  let max = 6;
-  const [moviesPart, addMovies] = useState(movie.slice(0, max));
+  const [moviesPart, addMovies] = useState(movie.slice(0, 6));
+  function showMore() {
+    max += 6;
+    addMovies(movie.slice(0, max));
+  }
 
-  function showMore() {}
   return (
     <section className="section__movies">
       <div className="movies__header">
