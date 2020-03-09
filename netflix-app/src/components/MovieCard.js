@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/components.scss";
 
 const MovieCard = ({ title, image, released, runtime, rating, synopsis }) => {
+  const [visible, setVisible] = useState(false);
+  function changeVisibleDescription() {
+    setVisible(!visible);
+  }
+
   const regex = /(<([^>]+)>)/gi;
   const description = synopsis.replace(regex, " ").replace("&#39;", "'");
+
   return (
-    <div className="movie__card movie__card-preview">
+    <div
+      className={visible ? "movie__card movie__card-preview" : "movie__card"}
+      onMouseEnter={changeVisibleDescription}
+      onMouseLeave={changeVisibleDescription}
+    >
       <div className="movie__img">
         <img src={image} alt="movie"></img>
       </div>
@@ -18,7 +28,7 @@ const MovieCard = ({ title, image, released, runtime, rating, synopsis }) => {
           {Math.round(rating * 10) / 10}
         </p>
       </div>
-      <div className="movie__description">{description}</div>
+      {visible && <div className="movie__description">{description}</div>}
     </div>
   );
 };
