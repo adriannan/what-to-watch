@@ -9,9 +9,7 @@
 .movie__card {
   width: 30vw;
   max-width: 400px;
-  //   height: 100px;
   display: flex;
-  //   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
@@ -20,6 +18,10 @@
   background-color: $opa-black;
   margin: 0.5em;
   padding: 1.5em;
+  position: relative;
+}
+.movie__card-preview {
+  border: none;
 }
 .movie__img {
   height: 100%;
@@ -58,4 +60,16 @@
 .movie__time {
   // justify-self: center;
   // justify-items: center;
+}
+.movie__description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 0.5px solid $opa-white;
+  padding: 1.5em;
+  font-size: 1.2em;
+  @include flex;
 }

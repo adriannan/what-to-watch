@@ -1,9 +1,11 @@
 import React from "react";
 import "../styles/components.scss";
 
-const MovieCard = ({ title, image, released, runtime, rating }) => {
+const MovieCard = ({ title, image, released, runtime, rating, synopsis }) => {
+  const regex = /(<([^>]+)>)/gi;
+  const description = synopsis.replace(regex, " ").replace("&#39;", "'");
   return (
-    <div className="movie__card">
+    <div className="movie__card movie__card-preview">
       <div className="movie__img">
         <img src={image} alt="movie"></img>
       </div>
@@ -16,6 +18,7 @@ const MovieCard = ({ title, image, released, runtime, rating }) => {
           {Math.round(rating * 10) / 10}
         </p>
       </div>
+      <div className="movie__description">{description}</div>
     </div>
   );
 };
