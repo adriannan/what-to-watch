@@ -7,8 +7,8 @@ let max = 6;
 
 const Movies = () => {
   const moviesList = Object.values(movies);
-  // const imdbList = Object.values(imdb);
-  const movie = moviesList.map(movie => (
+  const moviesSort = moviesList.filter(item => item.type === "movie");
+  const movie = moviesSort.map(movie => (
     <MovieCard id={movie.netflixid} {...movie} />
   ));
   const [moviesPart, addMovies] = useState(movie.slice(0, 6));
