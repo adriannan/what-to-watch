@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/components.scss";
+import movieImg from "../images/movie.png";
 
 const MovieCard = ({ title, image, released, runtime, rating, synopsis }) => {
   const [visible, setVisible] = useState(false);
+  const [imageSrc, changeImage] = useState(image);
   function changeVisibleDescription() {
     setVisible(!visible);
+  }
+  function changeImageSrc() {
+    changeImage(movieImg);
+  }
+  function showError() {
+    changeImageSrc();
   }
 
   const regex = /(<([^>]+)>)/gi;
@@ -17,7 +25,7 @@ const MovieCard = ({ title, image, released, runtime, rating, synopsis }) => {
       onMouseLeave={changeVisibleDescription}
     >
       <div className="movie__img">
-        <img src={image} alt="movie"></img>
+        <img src={imageSrc} onError={showError} alt="movie"></img>
       </div>
       <div className="movie__info">
         <h2 className="movie__tit">{title}</h2>
