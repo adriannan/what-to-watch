@@ -3,6 +3,8 @@
 .section__movies,
 .section__tvshows {
   padding-top: 12vh; // height 10vh on home page and become smaller on other pages
+  display: flex;
+  flex-direction: column;
 }
 .movies__header,
 .tvshows__header {
@@ -40,4 +42,25 @@
 .tvshows__btn:last-child {
   position: absolute;
   right: 1em;
+}
+
+.movies__btn-more {
+  padding: 0.3em 2em;
+  margin: 1em auto;
+  font-size: 1.2em;
+  border: 1px solid $opa-white;
+  border-radius: 3em;
+  background-color: $opa-black;
+  color: #ddd;
+  font-family: $font;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    color: #ccc;
+    transform: scale(0.98);
+  }
+  &:focus {
+    outline: none;
+  }
 }
