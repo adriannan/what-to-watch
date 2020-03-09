@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/pages.scss";
 import MovieCard from "../components/MovieCard";
 import movies from "../netflix-api/movies.json";
@@ -10,7 +10,10 @@ const Movies = () => {
   const movie = moviesList.map(movie => (
     <MovieCard id={movie.netflixid} {...movie} />
   ));
+  let max = 6;
+  const [moviesPart, addMovies] = useState(movie.slice(0, max));
 
+  function showMore() {}
   return (
     <section className="section__movies">
       <div className="movies__header">
@@ -32,7 +35,10 @@ const Movies = () => {
           Sort by <i class="material-icons movies__btn-icon">arrow_drop_down</i>
         </button>
       </div>
-      <div className="movies__main">{movie}</div>
+      <div className="movies__main">{moviesPart}</div>
+      <button className="movies__btn-more" onClick={showMore}>
+        Show More
+      </button>
     </section>
   );
 };
