@@ -20,6 +20,7 @@ class App extends Component {
   render() {
     return (
       <Router basename={process.env.PUBLIC_URL}>
+        <div className="backgroundContainer" />
         <div className="app">
           <header>
             <Header />

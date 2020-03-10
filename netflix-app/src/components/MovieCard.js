@@ -32,7 +32,7 @@ const MovieCard = ({ title, image, released, runtime, rating, synopsis }) => {
         <h3 className="movie__year">{released}</h3>
         <p className="movie__time">{runtime}</p>
         <p className="movie__rate">
-          <i class="material-icons">star</i>
+          <i className="material-icons">star</i>
           {Math.round(rating * 10) / 10}
         </p>
       </div>
