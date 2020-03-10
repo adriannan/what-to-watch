@@ -1,10 +1,10 @@
-.backgroundContainer {
+body {
+  background: #111111 url("../images/bckg.jpg") no-repeat center/cover;
+  background-attachment: fixed;
+}
+.app {
   width: 100vw;
   height: 100vh;
-  /* text-align: center; */
-  background: #111111 url("../images/bckg.jpg") no-repeat center/cover;
-  z-index: -1;
-  position: fixed;
 }
 * {
   margin: 0;
