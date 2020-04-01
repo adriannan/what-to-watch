@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import "../styles/components.scss";
-import movieImg from "../images/movie.png";
+import React, { useState } from 'react';
+import '../styles/components.scss';
+import movieImg from '../images/movie.png';
 
 const MovieCard = ({ title, image, released, runtime, rating, synopsis }) => {
   const [visible, setVisible] = useState(false);
@@ -16,11 +16,11 @@ const MovieCard = ({ title, image, released, runtime, rating, synopsis }) => {
   }
 
   const regex = /(<([^>]+)>)/gi;
-  const description = synopsis.replace(regex, " ").replace("&#39;", "'");
+  const description = synopsis.replace(regex, ' ').replace('&#39;', "'");
 
   return (
     <div
-      className={visible ? "movie__card movie__card-preview" : "movie__card"}
+      className={visible ? 'movie__card movie__card-preview' : 'movie__card'}
       onMouseEnter={changeVisibleDescription}
       onMouseLeave={changeVisibleDescription}
     >

@@ -1,32 +1,28 @@
-import React, { useState } from "react";
-import "../styles/pages.scss";
-import MovieCard from "../components/MovieCard";
-import DropdownButton from "../components/DropdownButton";
-import movies from "../netflix-api/movies.json";
-import imdb from "../netflix-api/imdb.json";
-import "../styles/pages.scss";
+import React, { useState } from 'react';
+import '../styles/pages.scss';
+import MovieCard from '../components/MovieCard';
+import DropdownButton from '../components/DropdownButton';
+import movies from '../netflix-api/movies.json';
+import imdb from '../netflix-api/imdb.json';
+import '../styles/pages.scss';
 
 let max = 6;
 
-
 const Movies = () => {
   const moviesList = Object.values(movies);
-  const moviesSort = moviesList.filter(item => item.type === "movie");
-  const movie = moviesSort.map(movie => (
-    <MovieCard id={movie.netflixid} {...movie} />
-  ));
+  const moviesSort = moviesList.filter(item => item.type === 'movie');
+  const movie = moviesSort.map(movie => <MovieCard id={movie.netflixid} {...movie} />);
 
-  const genresValues = ["comedy", "horror", "thriller", "documentary"];
+  const genresValues = ['comedy', 'horror', 'thriller', 'documentary'];
   const yearsValues = ["80's", "90's", "00's", "10's"];
-  const ratesValues = ["5+", "4+", "3+"];
-  const sortByValues = ["year", "rate"];
+  const ratesValues = ['5+', '4+', '3+'];
+  const sortByValues = ['year', 'rate'];
 
   const [moviesPart, addMovies] = useState(movie.slice(0, 6));
   function showMore() {
     max += 6;
     addMovies(movie.slice(0, max));
   }
-
 
   return (
     <section className="section__movies">
