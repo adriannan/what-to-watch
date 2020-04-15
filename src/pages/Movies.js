@@ -10,13 +10,13 @@ let max = 6;
 
 const Movies = () => {
   const moviesList = Object.values(movies);
-  const moviesSort = moviesList.filter(item => item.type === 'movie');
-  const movie = moviesSort.map(movie => <MovieCard id={movie.netflixid} {...movie} />);
+  const moviesSort = moviesList.filter((item) => item.type === 'movie');
+  const movie = moviesSort.map((movie) => <MovieCard id={movie.netflixid} {...movie} />);
 
-  const genresValues = ['comedy', 'horror', 'thriller', 'documentary'];
+  const genresValues = ['Comedy', 'Horror', 'Thriller', 'Documentary'];
   const yearsValues = ["80's", "90's", "00's", "10's"];
   const ratesValues = ['5+', '4+', '3+'];
-  const sortByValues = ['year', 'rate'];
+  const sortByValues = ['Year', 'Rate'];
 
   const [moviesPart, addMovies] = useState(movie.slice(0, 6));
   function showMore() {

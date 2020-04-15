@@ -1,5 +1,5 @@
-import React from "react";
-import "../styles/pages.scss";
+import React from 'react';
+import '../styles/pages.scss';
 
 const DropdownButton = ({ options, placeholder }) => {
   const generateSelectOptions = () => {
@@ -7,7 +7,7 @@ const DropdownButton = ({ options, placeholder }) => {
       options.length &&
       options.map((option, index) => {
         return (
-          <option className="dropdownOption" value={option}>
+          <option className="dropdownOption" value={option.toLowerCase()}>
             {option}
           </option>
         );

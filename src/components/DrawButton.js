@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 // import "../styles/header.scss";
 
-const DrawButton = () => {
-  return <button className="home__btn">Destiny will choose</button>;
+const DrawButton = ({ text }) => {
+  return <button className="home__btn">{text}</button>;
 };
 
 export default DrawButton;

@@ -1,10 +1,15 @@
-@import "abstracts";
+@import 'abstracts';
 
 .section__movies,
-.section__tvshows {
-  padding-top: 12vh; // height 10vh on home page and become smaller on other pages
+.section__tvshows,
+.section__login,
+.section__error,
+.section__fav,
+.section__profile {
+  padding-top: 12vh;
   display: flex;
   flex-direction: column;
+  color: #fff;
 }
 .movies__header,
 .tvshows__header {
