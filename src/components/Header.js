@@ -4,7 +4,7 @@ import SearchInput from './SearchInput';
 import '../styles/header.scss';
 import { routes } from '../routes';
 
-const Header = () => {
+const Header = ({ state, signOut }) => {
   return (
     <header className="header">
       <nav className="header__nav">
@@ -26,6 +26,15 @@ const Header = () => {
         <NavLink to={routes.profile} className="header__link">
           <div>Profile</div>
         </NavLink>
+        {state ? (
+          <div className="header__link" onClick={signOut}>
+            Sign Out
+          </div>
+        ) : (
+          <NavLink to={routes.login} className="header__link">
+            Sign In
+          </NavLink>
+        )}
       </div>
     </header>
   );

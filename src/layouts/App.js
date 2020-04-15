@@ -10,29 +10,37 @@ import Profile from '../pages/Profile';
 import LoginPage from '../pages/LoginPage';
 import ErrorPage from '../pages/ErrorPage';
 import { routes } from '../routes';
+import firebase from 'firebase/app';
 
 class App extends Component {
   state = {
-    isLoggedIn: false,
+    isSignedIn: false,
     favourites: [],
   };
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged((user) => this.setState({ isSignedIn: !!user }));
+  }
+
+  handleSignOut() {
+    firebase.auth().signOut();
+    console.log('clicked logout button');
+  }
+
   render() {
-    const { isLoggedIn, favourites } = this.state;
+    const { isSignedIn, favourites } = this.state;
     return (
       <Router basename={process.env.PUBLIC_URL}>
         <div className="backgroundContainer" />
         <div className="app">
-          <Header />
+          <Header state={isSignedIn} signOut={this.handleSignOut} />
           <Switch>
             <Route path={routes.home} exact component={Home} />
             <Route path={routes.tvshows} component={Shows} />
             <Route path={routes.movies} component={Movies} />
             <Route path={routes.favourites} component={Favourites} />
-            <Route
-              path={routes.profile}
-              render={() => (isLoggedIn ? Profile : <Redirect to={routes.login} />)}
-            />
+            <Route path={routes.profile} render={() => <Profile state={isSignedIn} />} />
             <Route path={routes.login} component={LoginPage} />
+
             <Route component={ErrorPage} />
           </Switch>
           {/* <footer>{<Footer />}</footer> */}

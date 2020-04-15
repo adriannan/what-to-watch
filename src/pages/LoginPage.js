@@ -1,14 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import firebase from 'firebase';
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import { routes } from '../routes';
+
+const uiConfig = {
+  // Popup signin flow rather than redirect flow.
+  signInFlow: 'popup',
+  // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
+  signInSuccessUrl: routes.home,
+  signInOptions: [
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+  ],
+};
 
 const LoginPage = () => {
   return (
     <section className="section__login">
-      <h1>LOGIN FORM</h1>
+      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas id quasi autem nemo sit
-        consequuntur quod, deserunt aperiam natus voluptate temporibus ex totam nam praesentium quo
-        rem neque odit. Sequi.
+        Don’t have an account? <Link>Sign up</Link>
       </p>
     </section>
   );

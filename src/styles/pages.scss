@@ -2,14 +2,21 @@
 
 .section__movies,
 .section__tvshows,
-.section__login,
-.section__error,
-.section__fav,
-.section__profile {
+.section__fav {
   padding-top: 12vh;
   display: flex;
   flex-direction: column;
   color: #fff;
+}
+
+.section__login,
+.section__error,
+.section__profile {
+  padding-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  align-items: center;
 }
 .movies__header,
 .tvshows__header {
