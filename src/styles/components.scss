@@ -1,4 +1,4 @@
-@import "abstracts";
+@import 'abstracts';
 
 .movies__main {
   display: flex;
@@ -69,4 +69,29 @@
   padding: 1.5em;
   font-size: 1.2em;
   @include flex;
+}
+
+.login__container,
+.register__container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  width: 40rem;
+  padding: 4rem;
+  border-radius: 0.2rem;
+  background-color: $opa-black;
+}
+.login__container p,
+.register__container p {
+  color: $opa-white;
+}
+.login__container a,
+.register__container a {
+  color: #fff;
+  text-decoration: none;
+}
+.login__container a:hover,
+.register__container a:hover {
+  text-decoration: underline;
 }

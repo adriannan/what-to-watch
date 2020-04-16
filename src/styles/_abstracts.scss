@@ -1,7 +1,8 @@
 $red: #e50914;
+$opa-red: rgba(229, 9, 20, 0.9);
 $opa-black: rgba(0, 0, 0, 0.5);
 $opa-white: rgba(255, 255, 255, 0.5);
-$font: "EB Garamond", Georgia, serif;
+$font: 'EB Garamond', Georgia, serif;
 
 @mixin flex {
   display: flex;
