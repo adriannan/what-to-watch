@@ -1,8 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import firebase from 'firebase';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import { routes } from '../routes';
+import SignInForm from '../components/SignInForm';
+import { FirebaseContext } from '../firebase';
+
+const SignInFormRouter = withRouter(SignInForm);
 
 const uiConfig = {
   // Popup signin flow rather than redirect flow.
@@ -18,10 +22,15 @@ const uiConfig = {
 const LoginPage = () => {
   return (
     <section className="section__login">
-      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
-      <p>
-        Don’t have an account? <Link>Sign up</Link>
-      </p>
+      <div className="login__container">
+        <FirebaseContext.Consumer>
+          {(firebase) => <SignInFormRouter firebase={firebase} />}
+        </FirebaseContext.Consumer>
+        <p>
+          Don’t have an account? <Link to={routes.register}>Sign up</Link>
+        </p>
+        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+      </div>
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/App.scss';
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from '../components/Header';
 import Home from '../pages/Home';
 import Shows from '../pages/Shows';
@@ -8,6 +8,7 @@ import Movies from '../pages/Movies';
 import Favourites from '../pages/Favourites';
 import Profile from '../pages/Profile';
 import LoginPage from '../pages/LoginPage';
+import RegisterPage from '../pages/RegisterPage';
 import ErrorPage from '../pages/ErrorPage';
 import { routes } from '../routes';
 import firebase from 'firebase/app';
@@ -23,7 +24,6 @@ class App extends Component {
 
   handleSignOut() {
     firebase.auth().signOut();
-    console.log('clicked logout button');
   }
 
   render() {
@@ -40,6 +40,7 @@ class App extends Component {
             <Route path={routes.favourites} component={Favourites} />
             <Route path={routes.profile} render={() => <Profile state={isSignedIn} />} />
             <Route path={routes.login} component={LoginPage} />
+            <Route path={routes.register} component={RegisterPage} />
 
             <Route component={ErrorPage} />
           </Switch>

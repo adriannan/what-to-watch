@@ -1,0 +1,61 @@
+@import '../styles/abstracts';
+
+.login__form,
+.register__form {
+  // display: flex;
+  // flex-grow: 1;
+  // flex-direction: column;
+  // align-items: center;
+  // width: 40rem;
+  // padding: 4rem;
+  // border-radius: 0.2rem;
+  // background-color: $opa-black;
+  // background-color: rgba(255, 255, 255, 0.3);
+}
+.login__tit,
+.register__tit {
+  margin-bottom: 1.2rem;
+}
+
+.login__form input,
+.register__form input {
+  width: 100%;
+  font-size: 1.2em;
+  padding: 0.6rem;
+  border-radius: 0.2rem;
+  border: 0.2rem solid transparent;
+  transition: 0.2s ease-in-out;
+  background-color: #fff;
+  margin-top: 1.5rem;
+}
+.login__btn,
+.register__btn {
+  width: 100%;
+  font-size: 1.2em;
+  border-radius: 0.2rem;
+  border: 0.2rem solid transparent;
+  color: #fff;
+  background-color: $red;
+  padding: 1rem;
+  margin: 4rem 0 3rem;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+}
+.login__btn:hover,
+.register__btn:hover {
+  background-color: $opa-red;
+}
+.login__btn:disabled,
+.register__btn:disabled,
+.login__btn[disabled],
+.register__btn[disabled] {
+  opacity: 0.5;
+}
+.login__btn:disabled:hover,
+.register__btn:disabled:hover,
+.login__btn[disabled]:hover,
+.register__btn[disabled]:hover {
+  opacity: 0.5;
+  cursor: default;
+  background-color: $red;
+}
