@@ -22,17 +22,13 @@ class App extends Component {
     firebase.auth().onAuthStateChanged((user) => this.setState({ isSignedIn: !!user }));
   }
 
-  handleSignOut() {
-    firebase.auth().signOut();
-  }
-
   render() {
     const { isSignedIn, favourites } = this.state;
     return (
       <Router basename={process.env.PUBLIC_URL}>
         <div className="backgroundContainer" />
         <div className="app">
-          <Header state={isSignedIn} signOut={this.handleSignOut} />
+          <Header state={isSignedIn} />
           <Switch>
             <Route path={routes.home} exact component={Home} />
             <Route path={routes.tvshows} component={Shows} />

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { routes } from '../routes';
 import './signForm.scss';
 
@@ -13,11 +12,11 @@ class SignInForm extends Component {
   state = { ...INITIAL_STATE };
 
   handleSubmit = (e) => {
-    const { username, password } = this.state;
+    const { email, password } = this.state;
 
     this.props.firebase
-      .doCreateUserWithEmailAndPassword(username, password)
-      .then((authUser) => {
+      .doSignInWithEmailAndPassword(email, password)
+      .then(() => {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(routes.home);
       })
@@ -33,16 +32,16 @@ class SignInForm extends Component {
   };
 
   render() {
-    const { username, password, error } = this.state;
-    const isInvalid = password === '' || username === '';
+    const { email, password, error } = this.state;
+    const isInvalid = password === '' || email === '';
     return (
       <form className="login__form" onSubmit={this.handleSubmit}>
         <input
-          name="username"
-          value={username}
+          name="email"
+          value={email}
           onChange={this.handleChange}
           type="text"
-          placeholder="Username"
+          placeholder="Email"
         />
         <input
           name="password"
