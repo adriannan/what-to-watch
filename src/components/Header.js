@@ -1,10 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import SearchInput from './SearchInput';
+import SignOutButton from './SignOutButton';
 import '../styles/header.scss';
 import { routes } from '../routes';
 
-const Header = ({ state, signOut }) => {
+const Header = ({ state }) => {
   return (
     <header className="header">
       <nav className="header__nav">
@@ -27,9 +28,7 @@ const Header = ({ state, signOut }) => {
           <div>Profile</div>
         </NavLink>
         {state ? (
-          <div className="header__link" onClick={signOut}>
-            Sign Out
-          </div>
+          <SignOutButton />
         ) : (
           <NavLink to={routes.login} className="header__link">
             Sign In
