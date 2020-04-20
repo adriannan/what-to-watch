@@ -37,7 +37,8 @@ class App extends Component {
             <Route path={routes.home} exact component={Home} />
             <Route path={routes.tvshows} component={Shows} />
             <Route path={routes.movies} component={Movies} />
-            <Route path={routes.favourites} component={Favourites} />
+            {/* <Route path={routes.favourites} component={Favourites} /> */}
+            <Route path={routes.favourites} render={() => <Favourites authUser={authUser} />} />
             <Route path={routes.profile} render={() => <Profile authUser={authUser} />} />
             <Route path={routes.login} component={LoginPage} />
             <Route path={routes.register} component={RegisterPage} />
