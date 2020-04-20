@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import SearchInput from './SearchInput';
-import SignOutButton from './SignOutButton';
+import NavigationAuth from './NavigationAuth';
+import NavigationNonAuth from './NavigationNonAuth';
 import '../styles/header.scss';
 import { routes } from '../routes';
 
-const Header = ({ state }) => {
+const Header = ({ authUser }) => {
   return (
     <header className="header">
       <nav className="header__nav">
@@ -19,22 +19,7 @@ const Header = ({ state }) => {
           <div>Movies</div>
         </NavLink>
       </nav>
-      <div className="nav-right">
-        <SearchInput />
-        <NavLink to={routes.favourites} className="header__link">
-          <div>Favourites</div>
-        </NavLink>
-        <NavLink to={routes.profile} className="header__link">
-          <div>Profile</div>
-        </NavLink>
-        {state ? (
-          <SignOutButton />
-        ) : (
-          <NavLink to={routes.login} className="header__link">
-            Sign In
-          </NavLink>
-        )}
-      </div>
+      <div className="nav-right">{authUser ? <NavigationAuth /> : <NavigationNonAuth />}</div>
     </header>
   );
 };

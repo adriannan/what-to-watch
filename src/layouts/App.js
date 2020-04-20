@@ -15,26 +15,26 @@ import firebase from 'firebase/app';
 
 class App extends Component {
   state = {
-    isSignedIn: false,
+    authUser: false,
     favourites: [],
   };
   componentDidMount() {
-    firebase.auth().onAuthStateChanged((user) => this.setState({ isSignedIn: !!user }));
+    firebase.auth().onAuthStateChanged((user) => this.setState({ authUser: !!user }));
   }
 
   render() {
-    const { isSignedIn, favourites } = this.state;
+    const { authUser, favourites } = this.state;
     return (
       <Router basename={process.env.PUBLIC_URL}>
         <div className="backgroundContainer" />
         <div className="app">
-          <Header state={isSignedIn} />
+          <Header authUser={authUser} />
           <Switch>
             <Route path={routes.home} exact component={Home} />
             <Route path={routes.tvshows} component={Shows} />
             <Route path={routes.movies} component={Movies} />
             <Route path={routes.favourites} component={Favourites} />
-            <Route path={routes.profile} render={() => <Profile state={isSignedIn} />} />
+            <Route path={routes.profile} render={() => <Profile authUser={authUser} />} />
             <Route path={routes.login} component={LoginPage} />
             <Route path={routes.register} component={RegisterPage} />
 
