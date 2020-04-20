@@ -19,9 +19,13 @@ class App extends Component {
     favourites: [],
   };
   componentDidMount() {
-    firebase.auth().onAuthStateChanged((user) => this.setState({ authUser: !!user }));
+    this.firebaseListener = firebase
+      .auth()
+      .onAuthStateChanged((user) => this.setState({ authUser: !!user }));
   }
-
+  componentWillUnmount() {
+    this.firebaseListener();
+  }
   render() {
     const { authUser, favourites } = this.state;
     return (
