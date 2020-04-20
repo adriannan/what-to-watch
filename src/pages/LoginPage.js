@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import firebase from 'firebase';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import { routes } from '../routes';
-import SignInForm from '../components/SignInForm';
+import SignInForm from '../components/organisms/SignInForm';
 import { withFirebase } from '../firebase';
 
 const SignInFormRouter = withRouter(withFirebase(SignInForm));

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/pages.scss';
+import '../../styles/pages.scss';
 import './dropdownButton.scss';
 
 const DropdownButton = ({ options, placeholder }) => {

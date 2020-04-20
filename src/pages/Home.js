@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/home.scss';
-import DrawButton from '../components/DrawButton';
+import DrawButton from '../components/atoms/DrawButton';
 
 const Home = () => {
   return (

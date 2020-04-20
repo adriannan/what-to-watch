@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import NavigationAuth from './NavigationAuth';
-import NavigationNonAuth from './NavigationNonAuth';
-import '../styles/header.scss';
-import { routes } from '../routes';
+import NavigationAuth from '../molecules/NavigationAuth';
+import NavigationNonAuth from '../molecules/NavigationNonAuth';
+import '../../styles/header.scss';
+import { routes } from '../../routes';
 
 const Header = ({ authUser }) => {
   return (

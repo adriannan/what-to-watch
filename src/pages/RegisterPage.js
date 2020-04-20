@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { routes } from '../routes';
-import SignUpForm from '../components/SignUpForm';
+import SignUpForm from '../components/organisms/SignUpForm';
 import { withFirebase } from '../firebase';
 
 const SignUpFormRouter = withRouter(withFirebase(SignUpForm));

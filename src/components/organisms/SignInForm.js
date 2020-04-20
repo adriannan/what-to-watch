@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { routes } from '../routes';
+import { routes } from '../../routes';
 import './signForm.scss';
 
 const INITIAL_STATE = {

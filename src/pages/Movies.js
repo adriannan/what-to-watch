@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/pages.scss';
-import MovieCard from '../components/MovieCard';
-import DropdownButton from '../components/DropdownButton';
+import MovieCard from '../components/molecules/MovieCard';
+import DropdownButton from '../components/atoms/DropdownButton';
 import movies from '../netflix-api/movies.json';
 import imdb from '../netflix-api/imdb.json';
 import '../styles/pages.scss';

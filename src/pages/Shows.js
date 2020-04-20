@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import '../styles/pages.scss';
-import MovieCard from '../components/MovieCard';
+import MovieCard from '../components/molecules/MovieCard';
 import movies from '../netflix-api/movies.json';
 
 let max = 6;
 
 const Shows = () => {
   const moviesList = Object.values(movies);
-  const seriesSort = moviesList.filter(item => item.type === 'series');
-  const series = seriesSort.map(show => <MovieCard id={show.netflixid} {...show} />);
+  const seriesSort = moviesList.filter((item) => item.type === 'series');
+  const series = seriesSort.map((show) => <MovieCard id={show.netflixid} {...show} />);
   const [seriesPart, addSeries] = useState(series.slice(0, 6));
   function showMore() {
     max += 6;

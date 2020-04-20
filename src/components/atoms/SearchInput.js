@@ -1,5 +1,5 @@
-import React from "react";
-import "../styles/header.scss";
+import React from 'react';
+import '../../styles/header.scss';
 
 const SearchInput = () => {
   return (

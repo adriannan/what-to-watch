@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../styles/components.scss';
-import movieImg from '../images/movie.png';
+import '../../styles/components.scss';
+import movieImg from '../../images/movie.png';
 
 const MovieCard = ({ title, image, released, runtime, rating, synopsis }) => {
   const [visible, setVisible] = useState(false);

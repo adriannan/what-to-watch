@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import SearchInput from './SearchInput';
-import SignOutButton from './SignOutButton';
-import '../styles/header.scss';
-import { routes } from '../routes';
+import SearchInput from '../atoms/SearchInput';
+import SignOutButton from '../atoms/SignOutButton';
+import '../../styles/header.scss';
+import { routes } from '../../routes';
 
 const NavigationAuth = () => {
   return (
