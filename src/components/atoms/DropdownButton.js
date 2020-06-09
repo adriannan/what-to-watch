@@ -2,13 +2,13 @@ import React from 'react';
 import '../../styles/pages.scss';
 import './dropdownButton.scss';
 
-const DropdownButton = ({ options, placeholder }) => {
+const DropdownButton = ({ options, placeholder, handleSelect }) => {
   const generateSelectOptions = () => {
     return (
       options.length &&
       options.map((option, index) => {
         return (
-          <option className="dropdownOption" value={option.toLowerCase()}>
+          <option key={`${placeholder}_${index}`} className="dropdownOption" value={option.toLowerCase()}>
             {option}
           </option>
         );
@@ -16,12 +16,12 @@ const DropdownButton = ({ options, placeholder }) => {
     );
   };
   return (
-    <select className="movies__btn" id="title" name="genres">
+    <select className="movies__btn" id="title" name={placeholder} onChange={handleSelect} >
       <option className="dropdownOption" value="">
         {placeholder}
       </option>
       {generateSelectOptions()}
-    </select>
+    </select >
   );
 };
 
